@@ -1,0 +1,19 @@
+CREATE TABLE `answers` (
+  `idAnswer` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `answer` mediumtext,
+  PRIMARY KEY (`idAnswer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='answers for the issues.';
+
+
+CREATE TABLE `issues` (
+  `idIssue` int(10) unsigned NOT NULL,
+  `issueDesc` tinytext,
+  PRIMARY KEY (`idIssue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Issue Table.';
+
+
+CREATE TABLE `linkisuans` (
+  `idIssue` int(10) unsigned NOT NULL,
+  `idAnswer` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idIssue`,`idAnswer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Link table for issues and answers.';
